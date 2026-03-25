@@ -160,8 +160,8 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 </div>
 
 <div class="kids-bar">
-  <div class="kid-badge logan">🦖 Logan <span>Explorer · 3y 3m</span></div>
-  <div class="kid-badge caleb">🐻 Caleb <span>Sprout · 1y 6m</span></div>
+  <div class="kid-badge logan" onclick="filterKid('logan')" style="cursor:pointer">🦖 Logan <span>Explorer · 3y 3m</span></div>
+  <div class="kid-badge caleb" onclick="filterKid('caleb')" style="cursor:pointer">🐻 Caleb <span>Sprout · 1y 6m</span></div>
 </div>
 
 <div class="progress-wrap">
@@ -226,41 +226,42 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
   <div class="act-head" onclick="toggle('a2')">
     <div class="act-check" id="c2" onclick="event.stopPropagation();checkAct('c2','a2')"></div>
     <div class="act-info">
-      <h3 class="act-title">🌧️ Rain Puddle Hop</h3>
-      <div class="act-meta">15–20 min · <span class="act-domain">Gross Motor + Math</span></div>
+      <h3 class="act-title">🧊 Ice Cube Treasure Hunt</h3>
+      <div class="act-meta">15–20 min · <span class="act-domain">Sensory + Science</span></div>
     </div>
     <div class="chevron">›</div>
   </div>
   <div class="act-body">
     <h4>What You'll Need</h4>
     <ul>
-      <li>Blue construction paper, towels, or blue painters tape on the floor</li>
-      <li>Number cards (write 1–5 on index cards or paper)</li>
-      <li>Optional: music to play/pause for freeze rounds</li>
+      <li>Ice cube tray + small toys (animals, pom poms, beads, leaves)</li>
+      <li>A bin, baking sheet, or shallow container</li>
+      <li>Warm water in a squeeze bottle or cup (for melting)</li>
+      <li>Optional: food coloring to make the ice cubes colorful</li>
     </ul>
     <h4>How To Do It</h4>
-    <p>Make 5 "puddles" on the floor using blue paper or tape. Place a number card by each one. Play music — when it stops, call a number and everyone hops to that puddle!</p>
-    <p>Variations: "Jump OVER!" "Tiptoe AROUND!" "Stomp IN!" Add animal walks between puddles — waddle like a duck, hop like a frog.</p>
+    <p>Freeze small toys inside ice cubes the night before (or use big ice cubes from a muffin tin). Put them in a bin outside in the shade. Let the kids discover what's inside as the ice melts in the 93° heat! Pour warm water to speed it up. Name each treasure as it appears.</p>
+    <p>Perfect for a hot day — the ice keeps little hands cool while they explore. Great cause-and-effect learning: "The ice is melting! What's inside?"</p>
     <div class="age-box logan">
       <strong>🦖 Logan (3y3m)</strong>
-      Match numbers to puddles. "Can you jump to puddle THREE?" Count jumps: "Jump in puddle 4 exactly 4 times!" Let him call out numbers for you — he loves being in charge.
+      Hypothesis time! "What do you think is inside this one?" Let him predict before it melts. Count the treasures. Sort by color or type. Ask: "Why is the ice melting?" (science talk!)
     </div>
     <div class="age-box caleb">
       <strong>🐻 Caleb (1y6m)</strong>
-      Forget numbers — just stomp and toddle between puddles. Celebrate every step. Model "jump!" (even if it's a bouncy knee bend). Chase him for giggles.
+      Pure sensory joy. Let him touch the cold ice, feel it melt, splash the water. Pick up the revealed toys (pincer grasp!). Name each one as it appears: "Look — a STAR!"
     </div>
-    <a href="https://www.youtube.com/watch?v=FP0wgVhQCcA" target="_blank" class="yt-link">
+    <a href="https://www.youtube.com/watch?v=EPyFCHhPOHU" target="_blank" class="yt-link">
       <div class="yt-icon"></div>
-      <div><div class="yt-text">Freeze Dance for Toddlers — GoNoodle</div>
-      <div class="yt-sub">Use this for the music + freeze rounds</div></div>
+      <div><div class="yt-text">Ice Excavation Activity for Toddlers</div>
+      <div class="yt-sub">Quick setup demo for frozen treasure bins</div></div>
     </a>
     <div class="alt-section">
       <h5>🔄 Alternatives</h5>
       <ul>
-        <li><strong>No blue paper?</strong> Use towels, washcloths, or draw circles with chalk outside</li>
-        <li><strong>Outdoor version:</strong> Use chalk puddles on the driveway — add a hose for real splashing</li>
-        <li><strong>Calmer version:</strong> "Puddle stepping stones" — walk carefully between, no jumping</li>
-        <li><strong>Shape variation:</strong> Make puddles in different shapes — circle, square, star</li>
+        <li><strong>No time to freeze?</strong> Fill a bin with water + ice from the freezer and float toys in it</li>
+        <li><strong>Indoor version:</strong> Put the bin on a towel inside if it's too hot outside</li>
+        <li><strong>Color science:</strong> Freeze colored water (food coloring) and watch colors mix as they melt</li>
+        <li><strong>Sprinkler combo:</strong> Run through the sprinkler between ice rounds for a full water play morning</li>
       </ul>
     </div>
   </div>
@@ -454,6 +455,27 @@ try{if(sessionStorage.getItem('sw-auth')==='1'){
 
 // Activity toggle + check
 let completed=0;const total=5;
+function filterKid(kid){
+  var badges=document.querySelectorAll('.kid-badge');
+  var loganBoxes=document.querySelectorAll('.age-box.logan');
+  var calebBoxes=document.querySelectorAll('.age-box.caleb');
+  badges.forEach(function(b){b.style.opacity='0.4';b.style.fontWeight='normal'});
+  if(kid==='logan'){
+    document.querySelector('.kid-badge.logan').style.opacity='1';
+    document.querySelector('.kid-badge.logan').style.fontWeight='bold';
+    loganBoxes.forEach(function(b){b.style.display='block'});
+    calebBoxes.forEach(function(b){b.style.display='none'});
+  }else if(kid==='caleb'){
+    document.querySelector('.kid-badge.caleb').style.opacity='1';
+    document.querySelector('.kid-badge.caleb').style.fontWeight='bold';
+    calebBoxes.forEach(function(b){b.style.display='block'});
+    loganBoxes.forEach(function(b){b.style.display='none'});
+  }else{
+    badges.forEach(function(b){b.style.opacity='1'});
+    loganBoxes.forEach(function(b){b.style.display='block'});
+    calebBoxes.forEach(function(b){b.style.display='block'});
+  }
+}
 function toggle(id){document.getElementById(id).classList.toggle('open')}
 function checkAct(checkId,actId){
   const el=document.getElementById(checkId);
