@@ -455,25 +455,38 @@ try{if(sessionStorage.getItem('sw-auth')==='1'){
 
 // Activity toggle + check
 let completed=0;const total=5;
+var activeKid=null;
 function filterKid(kid){
-  var badges=document.querySelectorAll('.kid-badge');
+  var loganBadge=document.querySelector('.kid-badge.logan');
+  var calebBadge=document.querySelector('.kid-badge.caleb');
   var loganBoxes=document.querySelectorAll('.age-box.logan');
   var calebBoxes=document.querySelectorAll('.age-box.caleb');
-  badges.forEach(function(b){b.style.opacity='0.4';b.style.fontWeight='normal'});
-  if(kid==='logan'){
-    document.querySelector('.kid-badge.logan').style.opacity='1';
-    document.querySelector('.kid-badge.logan').style.fontWeight='bold';
-    loganBoxes.forEach(function(b){b.style.display='block'});
+  var activities=document.querySelectorAll('.activity');
+  
+  // Toggle off if same kid tapped again
+  if(activeKid===kid){activeKid=null;}
+  else{activeKid=kid;}
+  
+  if(activeKid==='logan'){
+    loganBadge.style.opacity='1';loganBadge.style.fontWeight='bold';loganBadge.style.transform='scale(1.05)';
+    calebBadge.style.opacity='0.4';calebBadge.style.fontWeight='normal';calebBadge.style.transform='scale(1)';
+    loganBoxes.forEach(function(b){b.style.display='block';b.style.borderLeft='3px solid var(--sage)'});
     calebBoxes.forEach(function(b){b.style.display='none'});
-  }else if(kid==='caleb'){
-    document.querySelector('.kid-badge.caleb').style.opacity='1';
-    document.querySelector('.kid-badge.caleb').style.fontWeight='bold';
-    calebBoxes.forEach(function(b){b.style.display='block'});
+    // Open all activities so content is visible
+    activities.forEach(function(a){a.classList.add('open')});
+  }else if(activeKid==='caleb'){
+    calebBadge.style.opacity='1';calebBadge.style.fontWeight='bold';calebBadge.style.transform='scale(1.05)';
+    loganBadge.style.opacity='0.4';loganBadge.style.fontWeight='normal';loganBadge.style.transform='scale(1)';
+    calebBoxes.forEach(function(b){b.style.display='block';b.style.borderLeft='3px solid #D4A574'});
     loganBoxes.forEach(function(b){b.style.display='none'});
+    // Open all activities so content is visible
+    activities.forEach(function(a){a.classList.add('open')});
   }else{
-    badges.forEach(function(b){b.style.opacity='1'});
-    loganBoxes.forEach(function(b){b.style.display='block'});
-    calebBoxes.forEach(function(b){b.style.display='block'});
+    // Show both — reset
+    loganBadge.style.opacity='1';loganBadge.style.fontWeight='normal';loganBadge.style.transform='scale(1)';
+    calebBadge.style.opacity='1';calebBadge.style.fontWeight='normal';calebBadge.style.transform='scale(1)';
+    loganBoxes.forEach(function(b){b.style.display='block';b.style.borderLeft='none'});
+    calebBoxes.forEach(function(b){b.style.display='block';b.style.borderLeft='none'});
   }
 }
 function toggle(id){document.getElementById(id).classList.toggle('open')}
