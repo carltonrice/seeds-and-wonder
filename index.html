@@ -13,11 +13,10 @@
   --sage-bg:#F0F8EA;--blush:#F0E0D6;--blush-light:#FEF8E8;
   --error:#D4614E;--shadow:0 2px 12px rgba(74,55,40,0.08);
   --radius:14px;--radius-sm:10px;
+  --blue-light:#E8F4FD;--blue:#4A8DB7;
 }
 body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:var(--brown);
   min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.5}
-
-/* === PIN GATE === */
 #pin-gate{display:flex;flex-direction:column;align-items:center;justify-content:center;
   min-height:100vh;padding:24px;text-align:center}
 #pin-gate .brand{font-family:'Playfair Display',serif;font-size:32px;font-weight:400;
@@ -33,11 +32,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 .pin-error{font-size:13px;color:var(--error);margin-top:8px;opacity:0;transition:opacity .2s}
 .pin-error.show{opacity:1}
 .pin-hint{font-size:12px;color:var(--gold-light);margin-top:12px}
-
-/* === APP === */
 #app{display:none;max-width:600px;margin:0 auto;padding:0 0 80px}
-
-/* Header */
 .header{text-align:center;padding:40px 20px 28px;
   background:linear-gradient(180deg,#F0E4D0 0%,var(--cream) 100%)}
 .header h1{font-family:'Playfair Display',serif;font-size:26px;font-weight:400;
@@ -45,17 +40,12 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 .header .date{font-size:13px;color:var(--brown-light);font-weight:300;margin-bottom:8px}
 .header .theme{display:inline-block;background:var(--sage);color:white;
   font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;letter-spacing:.3px}
-.header .weather{font-size:12px;color:var(--brown-light);margin-top:8px;font-weight:300;font-style:italic}
-
-/* Kids bar */
 .kids-bar{display:flex;gap:10px;padding:0 16px;margin-bottom:16px}
 .kid-badge{flex:1;border-radius:var(--radius-sm);padding:10px 14px;text-align:center;
   font-size:13px;font-weight:600;transition:all .2s}
 .kid-badge span{display:block;font-size:11px;font-weight:400;margin-top:2px;opacity:.8}
 .kid-badge.logan{background:var(--sage-light);color:var(--sage)}
 .kid-badge.caleb{background:var(--blush-light);color:#8A6D2B}
-
-/* Weather bar */
 .weather-bar{margin:0 16px 16px;padding:12px 16px;background:var(--warm-white);
   border-radius:var(--radius-sm);box-shadow:var(--shadow);font-size:13px;color:var(--brown);
   display:flex;align-items:center;gap:10px}
@@ -63,18 +53,12 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 .weather-bar .wx-text{flex:1;line-height:1.4}
 .weather-bar .wx-text strong{font-weight:600}
 .weather-bar .wx-text small{display:block;font-size:11px;color:var(--brown-light)}
-
-/* Progress bar */
 .progress-wrap{padding:0 16px;margin-bottom:20px}
 .progress-bar{height:6px;background:var(--gold-light);border-radius:3px;overflow:hidden}
 .progress-fill{height:100%;background:var(--sage);border-radius:3px;transition:width .4s ease;width:0}
 .progress-label{font-size:11px;color:var(--brown-light);margin-top:4px;text-align:right}
-
-/* Section headers */
 .section-header{padding:8px 16px;margin-top:8px;margin-bottom:4px}
 .section-header h2{font-family:'Playfair Display',serif;font-size:15px;color:var(--gold);font-weight:400;font-style:italic}
-
-/* Activity cards */
 .activity{background:var(--warm-white);border-radius:var(--radius);margin:0 16px 14px;
   box-shadow:var(--shadow);overflow:hidden}
 .activity.completed{opacity:.7}
@@ -95,8 +79,6 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
   font-size:11px;font-weight:500}
 .chevron{font-size:20px;color:var(--gold-light);transition:transform .2s;flex-shrink:0}
 .activity.open .chevron{transform:rotate(90deg)}
-
-/* Activity body */
 .act-body{display:none;padding:0 16px 16px;border-top:1px solid #F0EBE2}
 .activity.open .act-body{display:block}
 .act-body h4{font-size:12px;color:var(--gold);text-transform:uppercase;letter-spacing:.8px;
@@ -104,14 +86,10 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 .act-body p,.act-body li{font-size:14px;line-height:1.65;color:var(--brown)}
 .act-body ul{padding-left:18px;margin-bottom:8px}
 .act-body li{margin-bottom:4px}
-
-/* Age boxes */
 .age-box{border-radius:var(--radius-sm);padding:12px;margin-top:8px;font-size:13px;line-height:1.55}
 .age-box strong{display:block;font-size:12px;margin-bottom:3px}
 .age-box.logan{background:var(--sage-bg)}
 .age-box.caleb{background:var(--blush-light)}
-
-/* YouTube link */
 .yt-link{display:flex;align-items:center;gap:8px;background:#FFF5F0;border:1px solid #F0D8CC;
   border-radius:var(--radius-sm);padding:10px 12px;margin-top:10px;text-decoration:none;
   color:var(--brown);font-size:13px;font-weight:500;transition:background .2s}
@@ -122,15 +100,22 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
   border-top:5px solid transparent;border-bottom:5px solid transparent}
 .yt-link .yt-text{flex:1}
 .yt-link .yt-sub{font-size:11px;color:var(--brown-light);font-weight:400}
-
-/* Alternatives */
 .alt-section{background:var(--cream);border-radius:var(--radius-sm);padding:10px 12px;
   margin-top:10px;border:1px dashed var(--gold-light)}
 .alt-section h5{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--gold);
   margin-bottom:6px;font-family:'Inter',sans-serif;font-weight:600}
 .alt-section li{font-size:13px;color:var(--brown-light);margin-bottom:3px}
-
-/* Notes */
+/* Schedule block (non-interactive) */
+.sched-block{background:var(--warm-white);border-radius:var(--radius);margin:0 16px 14px;
+  padding:16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px}
+.sched-block .sched-icon{font-size:28px;flex-shrink:0}
+.sched-block .sched-info h3{font-size:15px;font-weight:600;color:var(--brown);margin-bottom:2px}
+.sched-block .sched-info p{font-size:13px;color:var(--brown-light);line-height:1.4}
+/* Scavenger hunt checklist */
+.hunt-list{list-style:none;padding:0;margin:8px 0}
+.hunt-list li{padding:6px 0;border-bottom:1px solid #F0EBE2;font-size:14px;display:flex;align-items:center;gap:8px}
+.hunt-list li:last-child{border-bottom:none}
+.hunt-list .hunt-icon{font-size:18px}
 .notes-card{background:var(--warm-white);border-radius:var(--radius);margin:0 16px 14px;
   padding:18px;box-shadow:var(--shadow)}
 .notes-card h3{font-family:'Playfair Display',serif;font-size:16px;color:var(--brown);margin-bottom:10px}
@@ -138,15 +123,11 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
   border-radius:var(--radius-sm);padding:12px;font-family:inherit;font-size:14px;
   resize:vertical;color:var(--brown);background:var(--cream)}
 .notes-card textarea:focus{outline:none;border-color:var(--gold)}
-
-/* Scripture */
 .scripture{text-align:center;margin:0 16px 20px;padding:20px;background:var(--warm-white);
   border-radius:var(--radius);box-shadow:var(--shadow)}
 .scripture p{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;
   color:var(--brown);line-height:1.6;margin-bottom:6px}
 .scripture cite{font-size:12px;color:var(--gold);font-style:normal;font-weight:600}
-
-/* Footer */
 .footer{text-align:center;font-size:12px;color:var(--gold-light);padding:20px 16px 40px}
 </style>
 </head>
@@ -173,7 +154,6 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
   <h1>🦁 Animal Adventure Thursday</h1>
   <div class="date">Thursday, March 26, 2026</div>
   <div class="theme">Animals All Around</div>
-  <div class="weather">Upper 80s, cloudy morning clearing to partly sunny. South winds 9mph.</div>
 </div>
 
 <div class="kids-bar">
@@ -181,36 +161,29 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
   <div class="kid-badge caleb" onclick="filterKid('caleb')" style="cursor:pointer">🐻 Caleb <span>Sprout · 1y 6m</span></div>
 </div>
 
-<!-- Weather bar -->
 <div class="weather-bar">
   <div class="wx-icon">🌤️</div>
   <div class="wx-text">
     <strong>Upper 80s, mostly cloudy AM then clearing</strong>
-    <small>Morning outdoor window (before 10:30am) · Indoor midday · Late afternoon outdoor window (after 4pm)</small>
+    <small>Perfect for creek play this afternoon. South winds 9mph.</small>
   </div>
 </div>
 
 <div class="progress-wrap">
   <div class="progress-bar"><div class="progress-fill" id="prog"></div></div>
-  <div class="progress-label" id="prog-label">0 of 5 complete</div>
+  <div class="progress-label" id="prog-label">0 of 3 complete</div>
 </div>
 
-<!-- Scripture Seed -->
-<div class="scripture">
-  <p>"Ask the animals, and they will teach you, or the birds in the sky, and they will tell you."</p>
-  <cite>Job 12:7</cite>
-</div>
+<!-- MORNING -->
+<div class="section-header"><h2>Morning</h2></div>
 
-<!-- MORNING OUTDOOR WINDOW -->
-<div class="section-header"><h2>Morning Outdoor Window</h2></div>
-
-<!-- ACTIVITY 1: Backyard Animal Safari -->
+<!-- ACTIVITY 1: Quick Animal Sort -->
 <div class="activity" id="a1">
   <div class="act-head" onclick="toggle('a1')">
     <div class="act-check" id="c1" onclick="event.stopPropagation();checkAct('c1','a1')"></div>
     <div class="act-info">
-      <h3 class="act-title">🦁 Backyard Animal Safari</h3>
-      <div class="act-meta">20–25 min · <span class="act-domain">Science + Gross Motor</span> <span class="act-time">Before 10:30am</span></div>
+      <h3 class="act-title">🦁 Quick Animal Sort</h3>
+      <div class="act-meta">10 min · <span class="act-domain">Science + Fine Motor</span> <span class="act-time">Before Bible study</span></div>
     </div>
     <div class="chevron">›</div>
   </div>
@@ -218,221 +191,157 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
     <h4>What You'll Need</h4>
     <ul>
       <li>Animal toys from the toy bin (the ones they already have)</li>
-      <li>A bucket or basket for "catching" animals</li>
-      <li>Blanket or towels for habitats (blue = water, green = jungle, brown = desert)</li>
-      <li>Binoculars (real or made from toilet paper rolls)</li>
+      <li>3 bowls or plates for sorting groups</li>
     </ul>
     <h4>How To Do It</h4>
-    <p>Before the boys wake up (or while they eat breakfast), hide 8–10 animal toys around the backyard. Under bushes, on the porch rail, tucked in a planter, peeking from behind a chair.</p>
-    <p>Give each boy a basket: "We're going on a SAFARI!" Walk the yard together. When they spot one: "What animal is that? What sound does it make? Where does it live?" Keep it moving so you're back inside before the heat builds.</p>
-    <p>Tie to faith: "God made SO many animals. Let's see how many we can find that He made!"</p>
+    <p>Quick and easy before Bible study. Dump the animal bin on the floor. "Can you sort them? Big animals here, little animals there!" That's it. Let them play with the sorting for 10 minutes, then clean up is part of the activity: "Can you put all the animals back in the bin before we go?"</p>
     <div class="age-box logan">
       <strong>🦖 Logan (3y3m)</strong>
-      He leads the safari. Give him the binoculars. Ask: "Is that a jungle animal or an ocean animal?" Have him stomp like an elephant when he finds one, slither like a snake, hop like a frog. Count your total finds together.
+      Sort by type (farm vs. jungle vs. ocean) or by size. Count each group. "Which group has the most?" Let him name every animal as it goes in.
     </div>
     <div class="age-box caleb">
       <strong>🐻 Caleb (1y6m)</strong>
-      He toddles along and picks up whatever he finds. Name every animal loudly: "LION! Rawr!" Let him drop them in the bucket. The find-and-drop is the whole game for him. Celebrate every discovery.
+      He picks up animals and drops them in bowls. Name each one: "LION! Rawr!" The dumping and dropping IS the activity for him. Celebrate every drop.
     </div>
-    <a href="https://www.youtube.com/watch?v=OwRmivbNgQk" target="_blank" class="yt-link">
-      <div class="yt-icon"></div>
-      <div><div class="yt-text">Walking Through the Jungle — Barefoot Books</div>
-      <div class="yt-sub">Sing-along to get them in safari mode before you go out</div></div>
-    </a>
     <div class="alt-section">
-      <h5>🔄 Alternatives</h5>
+      <h5>🔄 If You Skip This</h5>
       <ul>
-        <li><strong>Too warm already?</strong> Do the safari indoors. Hide animals around the living room.</li>
-        <li><strong>No binoculars?</strong> Tape two toilet paper tubes together. Logan will love making them.</li>
-        <li><strong>Extra challenge (Logan):</strong> Give him a "safari checklist" with animal pictures to check off as he finds them.</li>
-        <li><strong>Real animals:</strong> While outside, look for real bugs, birds, or lizards too.</li>
+        <li>Totally fine. Bible study is the main morning event. This is just a warm-up if there's time.</li>
+        <li><strong>Save for evening:</strong> Animal toys can be the bedtime pretend play instead.</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- INDOOR MIDDAY -->
-<div class="section-header"><h2>Indoor Activities (Midday)</h2></div>
+<!-- BIBLE STUDY BLOCK -->
+<div class="sched-block">
+  <div class="sched-icon">📖</div>
+  <div class="sched-info">
+    <h3>Bible Study with Rachel</h3>
+    <p>Rachel leads this. Both boys together. This is today's faith element.</p>
+  </div>
+</div>
 
-<!-- ACTIVITY 2: Animal Habitat Sorting -->
+<!-- MIDDAY -->
+<div class="section-header"><h2>Midday</h2></div>
+
+<div class="sched-block">
+  <div class="sched-icon">😴</div>
+  <div class="sched-info">
+    <h3>Lunch + Nap Time</h3>
+    <p>Rest up for the park this afternoon.</p>
+  </div>
+</div>
+
+<!-- AFTERNOON -->
+<div class="section-header"><h2>Afternoon</h2></div>
+
+<!-- ACTIVITY 2: Pfluger Park Creek Play -->
 <div class="activity" id="a2">
   <div class="act-head" onclick="toggle('a2')">
     <div class="act-check" id="c2" onclick="event.stopPropagation();checkAct('c2','a2')"></div>
     <div class="act-info">
-      <h3 class="act-title">🌍 Animal Habitat Sorting</h3>
-      <div class="act-meta">15–20 min · <span class="act-domain">Science + Math</span> <span class="act-time">Midday indoor</span></div>
+      <h3 class="act-title">🌊 Pfluger Park Creek Play</h3>
+      <div class="act-meta">All afternoon · <span class="act-domain">Sensory + Gross Motor + Social</span> <span class="act-time">After nap</span></div>
     </div>
     <div class="chevron">›</div>
   </div>
   <div class="act-body">
-    <h4>What You'll Need</h4>
+    <h4>What To Bring</h4>
     <ul>
-      <li>All the animal toys from the safari (bring them inside)</li>
-      <li>3 containers or sections of floor: jungle, ocean, farm</li>
-      <li>Blue towel or construction paper = ocean, green = jungle, brown paper bag or tan towel = farm/desert</li>
-      <li>Optional: blocks or Duplos to build "homes"</li>
+      <li>Water shoes for both boys</li>
+      <li>Change of clothes + towel</li>
+      <li>Sunscreen (upper 80s, clearing skies)</li>
+      <li>Snacks and water bottles</li>
+      <li>Optional: small bucket or cup for scooping</li>
     </ul>
-    <h4>How To Do It</h4>
-    <p>Lay out three "habitats" on the floor. Hold up each animal from the safari basket: "Where does the lion live? Jungle or ocean?" Place it in the right zone. Build up each habitat with blocks, pillows, or whatever you have.</p>
-    <p>Count how many live in each place. "The jungle has the MOST!" Make animal sounds as you sort. This is the calm-down transition from the morning outdoor energy.</p>
+    <h4>What Creek Play Builds</h4>
+    <p>This isn't just splashing. Creek play is a developmental goldmine:</p>
+    <ul>
+      <li><strong>Sensory processing:</strong> Cold water on feet, smooth rocks, muddy textures, the sound of flowing water</li>
+      <li><strong>Balance and coordination:</strong> Walking on uneven creek beds, stepping on rocks, crouching to pick things up</li>
+      <li><strong>Social skills:</strong> Playing alongside friends, sharing space, taking turns with good spots</li>
+      <li><strong>Science exploration:</strong> Water flow, what sinks vs. floats, where bugs live, how rocks feel different</li>
+      <li><strong>Language:</strong> Naming what they see, describing textures ("slimy!", "cold!", "bumpy!")</li>
+    </ul>
+    <h4>Nature Scavenger Hunt</h4>
+    <p>While you're there, see how many of these you can spot together:</p>
+    <ul class="hunt-list">
+      <li><span class="hunt-icon">🪨</span> A smooth rock</li>
+      <li><span class="hunt-icon">🐛</span> A bug (any kind)</li>
+      <li><span class="hunt-icon">🍂</span> A leaf floating on the water</li>
+      <li><span class="hunt-icon">🐦</span> A bird</li>
+      <li><span class="hunt-icon">🌿</span> Something green growing near the water</li>
+      <li><span class="hunt-icon">🦎</span> A lizard or frog (bonus!)</li>
+      <li><span class="hunt-icon">💧</span> A splash bigger than your hand</li>
+      <li><span class="hunt-icon">🐾</span> An animal print in the mud (bonus!)</li>
+    </ul>
     <div class="age-box logan">
       <strong>🦖 Logan (3y3m)</strong>
-      He decides where each animal goes. Ask "why" questions: "Why does the fish live in the ocean?" Let him build enclosures with blocks. If he wants a dinosaur habitat, let him create one. Count and compare groups: "Which habitat has more?"
+      He'll want to go deeper. Let him explore but stay close. He can do the scavenger hunt. "Can you find a smooth rock? How about a bug?" Count his finds. Let him throw rocks in the water (away from other kids). Ask: "Which rock makes the biggest splash?"
     </div>
     <div class="age-box caleb">
       <strong>🐻 Caleb (1y6m)</strong>
-      Hand him animals one at a time. Name them. Let him drop them wherever he wants (process over accuracy). He'll love the texture of the towels and the stacking of blocks. Repeat animal sounds: "Mooo! That's the cow!"
+      Shallow edge only. He'll sit and splash. Let him pick up rocks and drop them in the water. The cold water on his feet is a huge sensory experience. Stay within arm's reach. Name everything: "WATER! COLD! SPLASH!" He'll be fascinated just watching the water flow.
     </div>
-    <a href="https://www.youtube.com/watch?v=lXWAREexB4k" target="_blank" class="yt-link">
+    <a href="https://www.youtube.com/watch?v=OwRmivbNgQk" target="_blank" class="yt-link">
       <div class="yt-icon"></div>
-      <div><div class="yt-text">Animal Habitats for Kids — Peekaboo Kidz</div>
-      <div class="yt-sub">Colorful 5-min explainer, perfect background while sorting</div></div>
+      <div><div class="yt-text">Let's Go To The Zoo — Super Simple Songs</div>
+      <div class="yt-sub">Fun animal song for the car ride to the park</div></div>
     </a>
     <div class="alt-section">
-      <h5>🔄 Alternatives</h5>
+      <h5>🔄 If It's Too Hot or Plans Change</h5>
       <ul>
-        <li><strong>No towels?</strong> Draw habitat zones on a big piece of paper or use plates</li>
-        <li><strong>Fewer animals?</strong> Use pictures from a magazine or print animal photos</li>
-        <li><strong>Extension (Logan):</strong> After sorting, draw each habitat and the animals that live there</li>
+        <li><strong>Too hot at the park?</strong> Find shade by the creek, or bring a pop-up shade tent</li>
+        <li><strong>Plans cancelled?</strong> Backyard sprinkler + water table is a great substitute</li>
+        <li><strong>Caleb gets tired?</strong> One parent can take him to the playground while Logan keeps creek exploring</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- ACTIVITY 3: Noah's Ark Animal Parade -->
+<!-- EVENING -->
+<div class="section-header"><h2>Evening Wind-Down</h2></div>
+
+<!-- ACTIVITY 3: Bedtime Read-Aloud + Animal Pretend Play -->
 <div class="activity" id="a3">
   <div class="act-head" onclick="toggle('a3')">
     <div class="act-check" id="c3" onclick="event.stopPropagation();checkAct('c3','a3')"></div>
     <div class="act-info">
-      <h3 class="act-title">🚢 Noah's Ark Animal Parade</h3>
-      <div class="act-meta">15–20 min · <span class="act-domain">Faith + Math + Movement</span> <span class="act-time">Midday indoor</span></div>
+      <h3 class="act-title">📖 Animal Story + Pretend Play</h3>
+      <div class="act-meta">15 min · <span class="act-domain">Language + Imagination</span> <span class="act-time">Before bed</span></div>
     </div>
     <div class="chevron">›</div>
   </div>
   <div class="act-body">
     <h4>What You'll Need</h4>
     <ul>
-      <li>Animal toys (same ones from safari and sorting)</li>
-      <li>A big box, laundry basket, or couch cushion "boat"</li>
-      <li>Optional: <em>The Beginner's Bible</em> Noah's Ark story</li>
+      <li><em>Dear Zoo</em> by Rod Campbell, or any animal book with flaps</li>
+      <li>A few animal toys from this morning's sort</li>
+      <li>Cozy spot: couch, blanket fort, or floor pillows</li>
     </ul>
     <h4>How To Do It</h4>
-    <p>Tell the story simply: "God told Noah to build a big boat and bring two of every animal. Let's help!" Set up the "ark" (a box or basket) in the middle of the room.</p>
-    <p>March the animals in two by two. Count as they board: "Two lions! Two elephants!" Make each animal's sound as it walks on. Logan and Caleb ARE the parade, marching and stomping around the room carrying animals to the ark.</p>
-    <p>"God kept every animal safe. He keeps US safe too."</p>
+    <p>After bath time, settle in with a book. Read together, nice and slow. If you have matching animal toys, hold them up as they appear in the story. This connects the morning sort to the evening wind-down.</p>
+    <p>After the book, let them do 5 minutes of quiet pretend play with the animal toys. "Where are your animals going to sleep tonight?" Make little beds out of washcloths. Tuck the animals in. Then tuck the boys in.</p>
     <div class="age-box logan">
       <strong>🦖 Logan (3y3m)</strong>
-      He's the parade leader. He picks which animals go next. Practice counting by twos: "Two, four, six!" Ask: "Which animals are the biggest? They go on the bottom of the boat." Let him arrange them inside the ark.
+      He can retell what happened at the creek today. "What animals did you see at the park?" Let him "read" the book to Caleb or to his stuffed animals. He loves being the big brother teacher.
     </div>
     <div class="age-box caleb">
       <strong>🐻 Caleb (1y6m)</strong>
-      He marches. He stomps. He carries one animal at a time to the ark and drops it in. The in-and-out of the basket is the game. Clap and cheer each delivery: "Caleb brought the GIRAFFE!"
-    </div>
-    <a href="https://www.youtube.com/watch?v=kHRaO0wORo8" target="_blank" class="yt-link">
-      <div class="yt-icon"></div>
-      <div><div class="yt-text">The Animals Went in Two by Two — Nursery Rhyme</div>
-      <div class="yt-sub">Sing along during the parade</div></div>
-    </a>
-    <div class="alt-section">
-      <h5>🔄 Alternatives</h5>
-      <ul>
-        <li><strong>No big box?</strong> Use a laundry basket, bathtub, or tape an outline on the floor</li>
-        <li><strong>Quiet version:</strong> Skip the marching. Just line up pairs on the couch "boat" while reading the story</li>
-        <li><strong>Extension:</strong> After loading the ark, make rain sounds (bang on pots!) and then "open the window" to let the rainbow in</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- ACTIVITY 4: Animal Sound Read-Aloud -->
-<div class="activity" id="a4">
-  <div class="act-head" onclick="toggle('a4')">
-    <div class="act-check" id="c4" onclick="event.stopPropagation();checkAct('c4','a4')"></div>
-    <div class="act-info">
-      <h3 class="act-title">📖 "Dear Zoo" Read-Aloud</h3>
-      <div class="act-meta">10–15 min · <span class="act-domain">Language + Sensory</span> <span class="act-time">Midday wind-down</span></div>
-    </div>
-    <div class="chevron">›</div>
-  </div>
-  <div class="act-body">
-    <h4>What You'll Need</h4>
-    <ul>
-      <li><em>Dear Zoo</em> by Rod Campbell (or any animal book with flaps)</li>
-      <li>Cozy spot: couch, floor blanket, or Caleb's room</li>
-      <li>The matching animal toys for each page (if you have them)</li>
-    </ul>
-    <h4>How To Do It</h4>
-    <p>Read together. Before lifting each flap, ask: "What do you think the zoo sent THIS time?" Let them guess. When you reveal the animal, find the matching toy and hold it up. Make the sound together.</p>
-    <p>This is the calm-down activity. Low energy, cozy, snuggly. Perfect for after the parade when everyone needs to recharge before the afternoon.</p>
-    <div class="age-box logan">
-      <strong>🦖 Logan (3y3m)</strong>
-      He lifts the flaps. He guesses. Ask: "Why did they send him back?" (too big, too tall, too grumpy). He'll memorize the pattern fast: "I know! It's too SCARY!" Let him "read" it to Caleb.
-    </div>
-    <div class="age-box caleb">
-      <strong>🐻 Caleb (1y6m)</strong>
-      Flap books are magic at this age. He lifts, he sees, he points. Name everything. Let him hold the matching animal toy while you read. If he wanders after 5 minutes, that's fine. Lap time counts.
+      Lap time. Let him turn pages and point. He'll hold one animal toy the whole time. Name everything softly. This is calm-down time. Short is fine. If he's tired from the park, even 5 minutes counts.
     </div>
     <a href="https://www.youtube.com/watch?v=Wm2MFRkDsUY" target="_blank" class="yt-link">
       <div class="yt-icon"></div>
       <div><div class="yt-text">Dear Zoo — Animated Read-Aloud</div>
-      <div class="yt-sub">If you don't have the book, this version is great</div></div>
+      <div class="yt-sub">If you don't have the book, watch this together before bed</div></div>
     </a>
     <div class="alt-section">
       <h5>🔄 Alternatives</h5>
       <ul>
-        <li><strong>Don't have this book?</strong> <em>Brown Bear Brown Bear</em>, <em>From Head to Toe</em> by Eric Carle, or any animal book</li>
-        <li><strong>No book at all?</strong> Use the YouTube read-aloud above, or just play "What animal am I?" with sounds and let them guess</li>
-        <li><strong>Extension:</strong> After reading, each person picks their favorite animal from the book and acts it out</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- LATE AFTERNOON OUTDOOR -->
-<div class="section-header"><h2>Late Afternoon Outdoor Window</h2></div>
-
-<!-- ACTIVITY 5: Evening Nature Watch -->
-<div class="activity" id="a5">
-  <div class="act-head" onclick="toggle('a5')">
-    <div class="act-check" id="c5" onclick="event.stopPropagation();checkAct('c5','a5')"></div>
-    <div class="act-info">
-      <h3 class="act-title">🌿 Bug &amp; Bird Watch</h3>
-      <div class="act-meta">15–20 min · <span class="act-domain">Science + Nature + Faith</span> <span class="act-time">After 4pm</span></div>
-    </div>
-    <div class="chevron">›</div>
-  </div>
-  <div class="act-body">
-    <h4>What You'll Need</h4>
-    <ul>
-      <li>Binoculars from the morning (or just your eyes)</li>
-      <li>A magnifying glass (or phone camera zoomed in)</li>
-      <li>Small jar or container for temporary bug observation</li>
-      <li>Sidewalk chalk for drawing what you find</li>
-    </ul>
-    <h4>How To Do It</h4>
-    <p>Head back outside once it cools down (after 4pm, partly sunny by then). This time: look for REAL animals. Ants on the sidewalk, birds in the trees, rollie pollies under rocks, maybe a lizard on the fence.</p>
-    <p>Sit in the grass together and just watch. "How many birds can you count?" Gently catch a bug in the jar, look at it, let it go. Draw what you found with sidewalk chalk on the driveway.</p>
-    <p>End the day: "We played with our toy animals AND found real ones. God made them ALL. Even the tiny bugs. Even the birds way up high."</p>
-    <div class="age-box logan">
-      <strong>🦖 Logan (3y3m)</strong>
-      He's the lead naturalist. Count ants. Watch where the bird flies. "What do you think that bug eats?" Let him hold the magnifying glass. Draw his favorite animal on the driveway with chalk. Compare: "Is the real ant bigger or smaller than your toy ant?"
-    </div>
-    <div class="age-box caleb">
-      <strong>🐻 Caleb (1y6m)</strong>
-      Grass, dirt, rocks, leaves. He's in sensory heaven just being outside. Point at birds: "BIRD! Up there!" Let him hold the chalk and scribble. If he finds an ant, narrate: "Tiny! So tiny! He's walking!" Keep him close for bug safety.
-    </div>
-    <a href="https://www.youtube.com/watch?v=ux0Wfp1_Y2A" target="_blank" class="yt-link">
-      <div class="yt-icon"></div>
-      <div><div class="yt-text">Bugs Bugs Bugs! — The Kiboomers</div>
-      <div class="yt-sub">Fun insect song to play on the way outside</div></div>
-    </a>
-    <div class="alt-section">
-      <h5>🔄 Alternatives</h5>
-      <ul>
-        <li><strong>Still too hot at 4pm?</strong> Do a window watch from inside. Set up near a window and count birds/squirrels.</li>
-        <li><strong>No bugs out?</strong> Water a patch of dirt and wait 5 minutes. Bugs will come.</li>
-        <li><strong>Extension:</strong> Take photos of every animal you find. Make a "field guide" later.</li>
-        <li><strong>Evening walk:</strong> Take the safari to the neighborhood. Walk the block and count every animal (dogs, cats, birds, squirrels).</li>
+        <li><strong>Too tired for a book?</strong> Just the animal pretend play. 5 minutes of quiet play with toys is enough.</li>
+        <li><strong>Don't have Dear Zoo?</strong> <em>Brown Bear Brown Bear</em>, <em>Good Night Gorilla</em>, or any animal book works.</li>
+        <li><strong>Both boys wiped?</strong> Skip this entirely. The creek was the whole day. Bath and bed is fine.</li>
       </ul>
     </div>
   </div>
@@ -441,7 +350,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 <!-- Rachel's Notes -->
 <div class="notes-card">
   <h3>📝 Rachel's Notes</h3>
-  <textarea placeholder="Which animals were their favorites? Funny moments? What worked? What to skip next time? Did they find any real bugs outside?"></textarea>
+  <textarea placeholder="How was the creek? What did they find? Any favorite animals from today? Funny moments?"></textarea>
 </div>
 
 <div class="footer">🌱 Seeds &amp; Wonder · Frizzle Homeschool · Rice Family</div>
@@ -449,7 +358,6 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 </div><!-- end app -->
 
 <script>
-// PIN CODE — family pin is 0322
 const PIN='0322';
 const inputs=document.querySelectorAll('.pin-input input');
 inputs.forEach((inp,i)=>{
@@ -480,7 +388,7 @@ try{if(sessionStorage.getItem('sw-auth')==='1'){
   document.getElementById('app').style.display='block';
 }}catch(e){}
 
-let completed=0;const total=5;
+let completed=0;const total=3;
 var activeKid=null;
 function filterKid(kid){
   var loganBadge=document.querySelector('.kid-badge.logan');
