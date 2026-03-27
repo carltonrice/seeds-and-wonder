@@ -53,6 +53,10 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 .weather-bar .wx-text{flex:1;line-height:1.4}
 .weather-bar .wx-text strong{font-weight:600}
 .weather-bar .wx-text small{display:block;font-size:11px;color:var(--brown-light)}
+.caleb-day-banner{margin:0 16px 16px;padding:14px 16px;background:var(--blush-light);
+  border-radius:var(--radius-sm);border-left:4px solid var(--gold);font-size:13px;
+  color:var(--brown);line-height:1.5}
+.caleb-day-banner strong{color:var(--gold);font-weight:600}
 .progress-wrap{padding:0 16px;margin-bottom:20px}
 .progress-bar{height:6px;background:var(--gold-light);border-radius:3px;overflow:hidden}
 .progress-fill{height:100%;background:var(--sage);border-radius:3px;transition:width .4s ease;width:0}
@@ -105,24 +109,11 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 .alt-section h5{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--gold);
   margin-bottom:6px;font-family:'Inter',sans-serif;font-weight:600}
 .alt-section li{font-size:13px;color:var(--brown-light);margin-bottom:3px}
-/* Schedule block (non-interactive) */
 .sched-block{background:var(--warm-white);border-radius:var(--radius);margin:0 16px 14px;
   padding:16px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px}
 .sched-block .sched-icon{font-size:28px;flex-shrink:0}
 .sched-block .sched-info h3{font-size:15px;font-weight:600;color:var(--brown);margin-bottom:2px}
 .sched-block .sched-info p{font-size:13px;color:var(--brown-light);line-height:1.4}
-/* Scavenger hunt checklist */
-.hunt-list{list-style:none;padding:0;margin:8px 0}
-.hunt-list li{padding:6px 0;border-bottom:1px solid #F0EBE2;font-size:14px;display:flex;align-items:center;gap:8px}
-.hunt-list li:last-child{border-bottom:none}
-.hunt-list .hunt-icon{font-size:18px}
-.notes-card{background:var(--warm-white);border-radius:var(--radius);margin:0 16px 14px;
-  padding:18px;box-shadow:var(--shadow)}
-.notes-card h3{font-family:'Playfair Display',serif;font-size:16px;color:var(--brown);margin-bottom:10px}
-.notes-card textarea{width:100%;min-height:100px;border:2px solid var(--gold-light);
-  border-radius:var(--radius-sm);padding:12px;font-family:inherit;font-size:14px;
-  resize:vertical;color:var(--brown);background:var(--cream)}
-.notes-card textarea:focus{outline:none;border-color:var(--gold)}
 .scripture{text-align:center;margin:0 16px 20px;padding:20px;background:var(--warm-white);
   border-radius:var(--radius);box-shadow:var(--shadow)}
 .scripture p{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;
@@ -151,74 +142,112 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 <div id="app">
 
 <div class="header">
-  <h1>🦁 Animal Adventure Thursday</h1>
-  <div class="date">Thursday, March 26, 2026</div>
-  <div class="theme">Animals All Around</div>
+  <h1>🐻 Little Explorer Friday</h1>
+  <div class="date">Friday, March 27, 2026</div>
+  <div class="theme">Caleb 1:1 Day</div>
 </div>
 
 <div class="kids-bar">
-  <div class="kid-badge logan" onclick="filterKid('logan')" style="cursor:pointer">🦖 Logan <span>Explorer · 3y 3m</span></div>
-  <div class="kid-badge caleb" onclick="filterKid('caleb')" style="cursor:pointer">🐻 Caleb <span>Sprout · 1y 6m</span></div>
+  <div class="kid-badge logan" onclick="filterKid('logan')" style="cursor:pointer">🦖 Logan <span>At school today · 3y 3m</span></div>
+  <div class="kid-badge caleb" onclick="filterKid('caleb')" style="cursor:pointer">🐻 Caleb <span>1:1 with Mama · 1y 6m</span></div>
 </div>
 
 <div class="weather-bar">
-  <div class="wx-icon">🌤️</div>
+  <div class="wx-icon">☀️</div>
   <div class="wx-text">
-    <strong>Upper 80s, mostly cloudy AM then clearing</strong>
-    <small>Perfect for creek play this afternoon. South winds 9mph.</small>
+    <strong>89°F, sunny &amp; hot — south winds 10-20 mph</strong>
+    <small>Do outdoor play EARLY (before 10am). Shade + water essential. Sunscreen up!</small>
   </div>
+</div>
+
+<div class="caleb-day-banner">
+  <strong>🐻 Caleb 1:1 Day!</strong> Logan is at school this morning. This is your special time with Caleb — slower pace, his interests, his rhythm. No rushing. Enjoy the quiet.
 </div>
 
 <div class="progress-wrap">
   <div class="progress-bar"><div class="progress-fill" id="prog"></div></div>
-  <div class="progress-label" id="prog-label">0 of 3 complete</div>
+  <div class="progress-label" id="prog-label">0 of 4 complete</div>
 </div>
 
-<!-- MORNING -->
-<div class="section-header"><h2>Morning</h2></div>
+<!-- MORNING: CALEB 1:1 -->
+<div class="section-header"><h2>Morning — Caleb 1:1 Time</h2></div>
 
-<!-- ACTIVITY 1: Quick Animal Sort -->
+<!-- ACTIVITY 1: Sensory Water Play -->
 <div class="activity" id="a1">
   <div class="act-head" onclick="toggle('a1')">
     <div class="act-check" id="c1" onclick="event.stopPropagation();checkAct('c1','a1')"></div>
     <div class="act-info">
-      <h3 class="act-title">🦁 Quick Animal Sort</h3>
-      <div class="act-meta">10 min · <span class="act-domain">Science + Fine Motor</span> <span class="act-time">Before Bible study</span></div>
+      <h3 class="act-title">💧 Morning Water Play</h3>
+      <div class="act-meta">15-20 min · <span class="act-domain">Sensory + Fine Motor</span> <span class="act-time">After breakfast, before it gets hot</span></div>
     </div>
     <div class="chevron">›</div>
   </div>
   <div class="act-body">
     <h4>What You'll Need</h4>
     <ul>
-      <li>Animal toys from the toy bin (the ones they already have)</li>
-      <li>3 bowls or plates for sorting groups</li>
+      <li>Shallow bin or large baking dish with 1-2 inches of water</li>
+      <li>Measuring cups, spoons, a small funnel if you have one</li>
+      <li>A few small toys (rubber duck, plastic animals, balls)</li>
+      <li>Towel underneath for spills</li>
     </ul>
     <h4>How To Do It</h4>
-    <p>Quick and easy before Bible study. Dump the animal bin on the floor. "Can you sort them? Big animals here, little animals there!" That's it. Let them play with the sorting for 10 minutes, then clean up is part of the activity: "Can you put all the animals back in the bin before we go?"</p>
-    <div class="age-box logan">
-      <strong>🦖 Logan (3y3m)</strong>
-      Sort by type (farm vs. jungle vs. ocean) or by size. Count each group. "Which group has the most?" Let him name every animal as it goes in.
-    </div>
+    <p>Set up outside on the patio or porch while it's still cool (before 10am). Let Caleb stand or sit at his water table or a low bin. Drop in a few toys and cups. That's it — let him lead.</p>
+    <p>At 18 months, the magic is in the pouring, scooping, and splashing. He's learning cause and effect every time water moves. Name what he does: "You're POURING! Look at the water GO!"</p>
     <div class="age-box caleb">
-      <strong>🐻 Caleb (1y6m)</strong>
-      He picks up animals and drops them in bowls. Name each one: "LION! Rawr!" The dumping and dropping IS the activity for him. Celebrate every drop.
+      <strong>🐻 Caleb (1y6m) — What to watch for</strong>
+      Does he transfer water between cups? That's early problem-solving. Does he dunk toys and pull them out? That's object permanence practice. Does he splash with both hands? Bilateral coordination. Everything he does here is developmental gold. Just narrate and enjoy.
     </div>
     <div class="alt-section">
       <h5>🔄 If You Skip This</h5>
       <ul>
-        <li>Totally fine. Bible study is the main morning event. This is just a warm-up if there's time.</li>
-        <li><strong>Save for evening:</strong> Animal toys can be the bedtime pretend play instead.</li>
+        <li><strong>Too hot already?</strong> Do it inside in the kitchen with a towel mat. Smaller bin, same fun.</li>
+        <li><strong>Not feeling water today?</strong> Swap for a dry sensory bin: dried pasta + measuring cups + spoons (same fine motor, no mess cleanup).</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- BIBLE STUDY BLOCK -->
-<div class="sched-block">
-  <div class="sched-icon">📖</div>
-  <div class="sched-info">
-    <h3>Bible Study with Rachel</h3>
-    <p>Rachel leads this. Both boys together. This is today's faith element.</p>
+<!-- ACTIVITY 2: Music & Movement -->
+<div class="activity" id="a2">
+  <div class="act-head" onclick="toggle('a2')">
+    <div class="act-check" id="c2" onclick="event.stopPropagation();checkAct('c2','a2')"></div>
+    <div class="act-info">
+      <h3 class="act-title">🎵 Dance Party + Instruments</h3>
+      <div class="act-meta">10-15 min · <span class="act-domain">Music + Gross Motor</span> <span class="act-time">Mid-morning (inside, AC)</span></div>
+    </div>
+    <div class="chevron">›</div>
+  </div>
+  <div class="act-body">
+    <h4>What You'll Need</h4>
+    <ul>
+      <li>Phone or speaker for music</li>
+      <li>Wooden spoon + pot lid (instant drum kit)</li>
+      <li>Shaker: sealed container with dried pasta or rice inside</li>
+    </ul>
+    <h4>How To Do It</h4>
+    <p>It's going to be 89°F — stay inside for this one. Put on some toddler-friendly music and let Caleb bang, shake, and dance. Follow his lead. If he's banging the pot, bang along. If he's bouncing, bounce with him.</p>
+    <p>This is gross motor + rhythm + joy. No agenda. Just move together.</p>
+    <a href="https://www.youtube.com/watch?v=SFE0mMWiBsU" target="_blank" class="yt-link">
+      <div class="yt-icon"></div>
+      <div><div class="yt-text">Freeze Dance — The Kiboomers</div>
+      <div class="yt-sub">Caleb loves the stop-and-go — great for impulse control too</div></div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=71hqRT9U0wg" target="_blank" class="yt-link">
+      <div class="yt-icon"></div>
+      <div><div class="yt-text">If You're Happy and You Know It — Super Simple Songs</div>
+      <div class="yt-sub">Classic clap-along — he'll try to mimic the movements</div></div>
+    </a>
+    <div class="age-box caleb">
+      <strong>🐻 Caleb (1y6m) — What to watch for</strong>
+      Can he bang in rhythm (even loosely)? That's early musical timing. Does he try to clap or stomp when the song says to? That's following directions. Does he bring you a "drum"? That's sharing and social engagement. All wins.
+    </div>
+    <div class="alt-section">
+      <h5>🔄 If You Skip This</h5>
+      <ul>
+        <li><strong>Not in the mood?</strong> Just put music on during free play. Background music still counts.</li>
+        <li><strong>Save for Logan:</strong> Redo this when Logan gets home — he'll love leading the dance party for Caleb.</li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -226,75 +255,65 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 <div class="section-header"><h2>Midday</h2></div>
 
 <div class="sched-block">
-  <div class="sched-icon">😴</div>
+  <div class="sched-icon">📖</div>
   <div class="sched-info">
-    <h3>Lunch + Nap Time</h3>
-    <p>Rest up for the park this afternoon.</p>
+    <h3>Caleb Read-Aloud</h3>
+    <p>Pick 2-3 board books. Let him turn pages and point. Name everything he touches. This is 1:1 language time — no competing for attention. Favorites: <em>Brown Bear</em>, <em>Dear Zoo</em>, anything with flaps.</p>
   </div>
 </div>
 
-<!-- AFTERNOON -->
-<div class="section-header"><h2>Afternoon</h2></div>
+<div class="sched-block">
+  <div class="sched-icon">😴</div>
+  <div class="sched-info">
+    <h3>Lunch + Nap</h3>
+    <p>After books, lunch, then nap. He'll sleep well after water play + dance party.</p>
+  </div>
+</div>
 
-<!-- ACTIVITY 2: Pfluger Park Creek Play -->
-<div class="activity" id="a2">
-  <div class="act-head" onclick="toggle('a2')">
-    <div class="act-check" id="c2" onclick="event.stopPropagation();checkAct('c2','a2')"></div>
+<!-- AFTERNOON: LOGAN HOME -->
+<div class="section-header"><h2>Afternoon — Logan's Home!</h2></div>
+
+<div class="sched-block">
+  <div class="sched-icon">🏫</div>
+  <div class="sched-info">
+    <h3>Logan Pickup</h3>
+    <p>Let him decompress. Snack + free play first. Don't quiz him about school right away — he'll share when he's ready.</p>
+  </div>
+</div>
+
+<!-- ACTIVITY 3: Together Time — Sidewalk Chalk -->
+<div class="activity" id="a3">
+  <div class="act-head" onclick="toggle('a3')">
+    <div class="act-check" id="c3" onclick="event.stopPropagation();checkAct('c3','a3')"></div>
     <div class="act-info">
-      <h3 class="act-title">🌊 Pfluger Park Creek Play</h3>
-      <div class="act-meta">All afternoon · <span class="act-domain">Sensory + Gross Motor + Social</span> <span class="act-time">After nap</span></div>
+      <h3 class="act-title">🎨 Sidewalk Chalk Art</h3>
+      <div class="act-meta">15-20 min · <span class="act-domain">Art + Fine Motor + Together</span> <span class="act-time">Late afternoon (shade!)</span></div>
     </div>
     <div class="chevron">›</div>
   </div>
   <div class="act-body">
-    <h4>What To Bring</h4>
+    <h4>What You'll Need</h4>
     <ul>
-      <li>Water shoes for both boys</li>
-      <li>Change of clothes + towel</li>
-      <li>Sunscreen (upper 80s, clearing skies)</li>
-      <li>Snacks and water bottles</li>
-      <li>Optional: small bucket or cup for scooping</li>
+      <li>Sidewalk chalk (thick pieces for Caleb's grip)</li>
+      <li>Driveway or sidewalk in the shade</li>
+      <li>Water cups + paintbrushes (optional: "paint" with water to erase and redo)</li>
     </ul>
-    <h4>What Creek Play Builds</h4>
-    <p>This isn't just splashing. Creek play is a developmental goldmine:</p>
-    <ul>
-      <li><strong>Sensory processing:</strong> Cold water on feet, smooth rocks, muddy textures, the sound of flowing water</li>
-      <li><strong>Balance and coordination:</strong> Walking on uneven creek beds, stepping on rocks, crouching to pick things up</li>
-      <li><strong>Social skills:</strong> Playing alongside friends, sharing space, taking turns with good spots</li>
-      <li><strong>Science exploration:</strong> Water flow, what sinks vs. floats, where bugs live, how rocks feel different</li>
-      <li><strong>Language:</strong> Naming what they see, describing textures ("slimy!", "cold!", "bumpy!")</li>
-    </ul>
-    <h4>Nature Scavenger Hunt</h4>
-    <p>While you're there, see how many of these you can spot together:</p>
-    <ul class="hunt-list">
-      <li><span class="hunt-icon">🪨</span> A smooth rock</li>
-      <li><span class="hunt-icon">🐛</span> A bug (any kind)</li>
-      <li><span class="hunt-icon">🍂</span> A leaf floating on the water</li>
-      <li><span class="hunt-icon">🐦</span> A bird</li>
-      <li><span class="hunt-icon">🌿</span> Something green growing near the water</li>
-      <li><span class="hunt-icon">🦎</span> A lizard or frog (bonus!)</li>
-      <li><span class="hunt-icon">💧</span> A splash bigger than your hand</li>
-      <li><span class="hunt-icon">🐾</span> An animal print in the mud (bonus!)</li>
-    </ul>
+    <h4>How To Do It</h4>
+    <p>Wait for late afternoon shade (after 4pm if possible — it's going to be hot). Both boys together. Logan draws, Caleb scribbles. That's the whole plan.</p>
+    <p>Bonus: Draw a simple road and let them "drive" toy cars on it. Or trace their hands. Or draw animals from yesterday's creek adventure and have Logan tell Caleb about them.</p>
     <div class="age-box logan">
       <strong>🦖 Logan (3y3m)</strong>
-      He'll want to go deeper. Let him explore but stay close. He can do the scavenger hunt. "Can you find a smooth rock? How about a bug?" Count his finds. Let him throw rocks in the water (away from other kids). Ask: "Which rock makes the biggest splash?"
+      Let him draw whatever he wants. Ask "What's that?" and write the word next to it (early literacy connection). He can trace letters or draw shapes. Challenge: "Can you draw a fish like the ones in the creek yesterday?" Connects today to yesterday's experience.
     </div>
     <div class="age-box caleb">
       <strong>🐻 Caleb (1y6m)</strong>
-      Shallow edge only. He'll sit and splash. Let him pick up rocks and drop them in the water. The cold water on his feet is a huge sensory experience. Stay within arm's reach. Name everything: "WATER! COLD! SPLASH!" He'll be fascinated just watching the water flow.
+      He'll grip the chalk in a fist and make marks. That IS writing at 18 months. He might eat the chalk — redirect gently. Let him scribble over Logan's drawings (Logan may not love this — coach sharing). Water "painting" with a brush is a great alternative if chalk is frustrating.
     </div>
-    <a href="https://www.youtube.com/watch?v=OwRmivbNgQk" target="_blank" class="yt-link">
-      <div class="yt-icon"></div>
-      <div><div class="yt-text">Let's Go To The Zoo — Super Simple Songs</div>
-      <div class="yt-sub">Fun animal song for the car ride to the park</div></div>
-    </a>
     <div class="alt-section">
-      <h5>🔄 If It's Too Hot or Plans Change</h5>
+      <h5>🔄 If You Skip This</h5>
       <ul>
-        <li><strong>Too hot at the park?</strong> Find shade by the creek, or bring a pop-up shade tent</li>
-        <li><strong>Plans cancelled?</strong> Backyard sprinkler + water table is a great substitute</li>
-        <li><strong>Caleb gets tired?</strong> One parent can take him to the playground while Logan keeps creek exploring</li>
+        <li><strong>Still too hot?</strong> Do coloring or painting inside at the table instead.</li>
+        <li><strong>Logan needs solo time?</strong> Totally fine. Let him have free play. Caleb can do chalk solo or skip to evening wind-down.</li>
       </ul>
     </div>
   </div>
@@ -303,54 +322,49 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--cream);color:
 <!-- EVENING -->
 <div class="section-header"><h2>Evening Wind-Down</h2></div>
 
-<!-- ACTIVITY 3: Bedtime Read-Aloud + Animal Pretend Play -->
-<div class="activity" id="a3">
-  <div class="act-head" onclick="toggle('a3')">
-    <div class="act-check" id="c3" onclick="event.stopPropagation();checkAct('c3','a3')"></div>
+<!-- ACTIVITY 4: Cozy Friday Story Time -->
+<div class="activity" id="a4">
+  <div class="act-head" onclick="toggle('a4')">
+    <div class="act-check" id="c4" onclick="event.stopPropagation();checkAct('c4','a4')"></div>
     <div class="act-info">
-      <h3 class="act-title">📖 Animal Story + Pretend Play</h3>
-      <div class="act-meta">15 min · <span class="act-domain">Language + Imagination</span> <span class="act-time">Before bed</span></div>
+      <h3 class="act-title">🌙 Cozy Friday Story Time</h3>
+      <div class="act-meta">15 min · <span class="act-domain">Language + Bonding</span> <span class="act-time">Before bed</span></div>
     </div>
     <div class="chevron">›</div>
   </div>
   <div class="act-body">
     <h4>What You'll Need</h4>
     <ul>
-      <li><em>Dear Zoo</em> by Rod Campbell, or any animal book with flaps</li>
-      <li>A few animal toys from this morning's sort</li>
-      <li>Cozy spot: couch, blanket fort, or floor pillows</li>
+      <li>2-3 favorite books (let Logan pick one, pick one for Caleb)</li>
+      <li>Blanket fort, couch pile, or floor pillows</li>
+      <li>Stuffed animals welcome</li>
     </ul>
     <h4>How To Do It</h4>
-    <p>After bath time, settle in with a book. Read together, nice and slow. If you have matching animal toys, hold them up as they appear in the story. This connects the morning sort to the evening wind-down.</p>
-    <p>After the book, let them do 5 minutes of quiet pretend play with the animal toys. "Where are your animals going to sleep tonight?" Make little beds out of washcloths. Tuck the animals in. Then tuck the boys in.</p>
+    <p>End the week cozy. Build a little nest on the couch or floor. Both boys in laps or snuggled up. Read slow. Let Logan "read" to Caleb if he wants — he loves being the teacher.</p>
+    <p>After books: "What was your favorite part of today?" For Logan, this builds reflection. For Caleb, just naming things he saw ("WATER! CHALK!") is enough.</p>
     <div class="age-box logan">
       <strong>🦖 Logan (3y3m)</strong>
-      He can retell what happened at the creek today. "What animals did you see at the park?" Let him "read" the book to Caleb or to his stuffed animals. He loves being the big brother teacher.
+      Ask him about school today. What did he do? Who did he play with? If he doesn't want to talk about it, that's OK — he might open up during story time. Let him narrate the pictures in the book.
     </div>
     <div class="age-box caleb">
       <strong>🐻 Caleb (1y6m)</strong>
-      Lap time. Let him turn pages and point. He'll hold one animal toy the whole time. Name everything softly. This is calm-down time. Short is fine. If he's tired from the park, even 5 minutes counts.
+      He'll be tired. Short and sweet. Let him hold a book and turn pages even after you're done reading. If he falls asleep during story time, that's the best possible outcome.
     </div>
-    <a href="https://www.youtube.com/watch?v=6HxBkOZqpJI" target="_blank" class="yt-link">
-      <div class="yt-icon"></div>
-      <div><div class="yt-text">Dear Zoo — Animated Read-Aloud</div>
-      <div class="yt-sub">If you don't have the book, watch this together before bed</div></div>
-    </a>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="yt-link" style="display:none"><!-- placeholder --></a>
     <div class="alt-section">
-      <h5>🔄 Alternatives</h5>
+      <h5>🔄 If You Skip This</h5>
       <ul>
-        <li><strong>Too tired for a book?</strong> Just the animal pretend play. 5 minutes of quiet play with toys is enough.</li>
-        <li><strong>Don't have Dear Zoo?</strong> <em>Brown Bear Brown Bear</em>, <em>Good Night Gorilla</em>, or any animal book works.</li>
-        <li><strong>Both boys wiped?</strong> Skip this entirely. The creek was the whole day. Bath and bed is fine.</li>
+        <li><strong>Everyone's wiped?</strong> Bath and bed. The week was full. You crushed it.</li>
+        <li><strong>Logan wants screen time?</strong> One short show together is fine for Friday. <em>Bluey</em> counts as quality content.</li>
       </ul>
     </div>
   </div>
 </div>
 
-<!-- Rachel's Notes -->
-<div class="notes-card">
-  <h3>📝 Rachel's Notes</h3>
-  <textarea placeholder="How was the creek? What did they find? Any favorite animals from today? Funny moments?"></textarea>
+<!-- Scripture -->
+<div class="scripture">
+  <p>"He leads me beside quiet waters, he refreshes my soul."</p>
+  <cite>— Psalm 23:2-3</cite>
 </div>
 
 <div class="footer">🌱 Seeds &amp; Wonder · Frizzle Homeschool · Rice Family</div>
@@ -388,14 +402,13 @@ try{if(sessionStorage.getItem('sw-auth')==='1'){
   document.getElementById('app').style.display='block';
 }}catch(e){}
 
-let completed=0;const total=3;
+let completed=0;const total=4;
 var activeKid=null;
 function filterKid(kid){
   var loganBadge=document.querySelector('.kid-badge.logan');
   var calebBadge=document.querySelector('.kid-badge.caleb');
   var loganBoxes=document.querySelectorAll('.age-box.logan');
   var calebBoxes=document.querySelectorAll('.age-box.caleb');
-  var activities=document.querySelectorAll('.activity');
   if(activeKid===kid){activeKid=null;}
   else{activeKid=kid;}
   if(activeKid==='logan'){
@@ -403,13 +416,13 @@ function filterKid(kid){
     calebBadge.style.opacity='0.4';calebBadge.style.fontWeight='normal';calebBadge.style.transform='scale(1)';
     loganBoxes.forEach(function(b){b.style.display='block';b.style.borderLeft='3px solid var(--sage)'});
     calebBoxes.forEach(function(b){b.style.display='none'});
-    activities.forEach(function(a){a.classList.add('open')});
+    document.querySelectorAll('.activity').forEach(function(a){a.classList.add('open')});
   }else if(activeKid==='caleb'){
     calebBadge.style.opacity='1';calebBadge.style.fontWeight='bold';calebBadge.style.transform='scale(1.05)';
     loganBadge.style.opacity='0.4';loganBadge.style.fontWeight='normal';loganBadge.style.transform='scale(1)';
     calebBoxes.forEach(function(b){b.style.display='block';b.style.borderLeft='3px solid #D4A574'});
     loganBoxes.forEach(function(b){b.style.display='none'});
-    activities.forEach(function(a){a.classList.add('open')});
+    document.querySelectorAll('.activity').forEach(function(a){a.classList.add('open')});
   }else{
     loganBadge.style.opacity='1';loganBadge.style.fontWeight='normal';loganBadge.style.transform='scale(1)';
     calebBadge.style.opacity='1';calebBadge.style.fontWeight='normal';calebBadge.style.transform='scale(1)';
